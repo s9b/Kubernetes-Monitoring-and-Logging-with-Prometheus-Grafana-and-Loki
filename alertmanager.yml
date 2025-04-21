@@ -1,0 +1,11 @@
+
+global:
+  resolve_timeout: 5m
+
+route:
+  receiver: 'demo-notifications'
+
+receivers:
+  - name: 'demo-notifications'
+    email_configs:
+      - to: 'demo@example.com'

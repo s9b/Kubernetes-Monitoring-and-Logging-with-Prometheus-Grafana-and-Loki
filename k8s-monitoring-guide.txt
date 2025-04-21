@@ -1,0 +1,18 @@
+
+# Basic Commands
+
+# Get all pods in monitoring namespace
+kubectl get pods -n monitoring
+
+# Check logs of a specific pod
+kubectl logs <pod-name> -n monitoring
+
+# Get services
+kubectl get svc -n monitoring
+
+# Port forward Grafana to localhost
+kubectl port-forward svc/monitoring-grafana 3000:80 -n monitoring
+
+# Apply alertmanager config
+kubectl create configmap alertmanager-config --from-file=alertmanager.yml -n monitoring
+kubectl delete pod -l app.kubernetes.io/name=alertmanager -n monitoring
