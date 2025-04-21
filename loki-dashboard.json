@@ -1,4 +1,3 @@
-
 {
   "annotations": {
     "list": [
@@ -13,6 +12,7 @@
       }
     ]
   },
+  "editable": true,
   "panels": [
     {
       "datasource": "Loki",
@@ -23,31 +23,40 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 24,
         "x": 0,
         "y": 0
       },
-      "id": 1,
+      "id": 2,
       "options": {
         "dedupStrategy": "none",
         "enableLogDetails": true,
         "prettifyLogMessage": false,
-        "showLabels": false,
+        "showLabels": true,
         "sortOrder": "Descending",
         "wrapLogMessage": false
       },
       "targets": [
         {
-          "expr": "{job="kubernetes-pods"}",
+          "expr": "{job=\"kubernetes-pods\"}",
           "refId": "A"
         }
       ],
-      "title": "Pod Logs (Loki)",
+      "title": "Pod Logs via Loki",
       "type": "logs"
     }
   ],
   "schemaVersion": 30,
-  "title": "Loki Logs Dashboard",
+  "style": "dark",
+  "tags": ["logs", "loki"],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "title": "Loki Logs Dashboard (Fixed)",
   "version": 1
 }
